@@ -1,8 +1,12 @@
 package com.example.SekrabCurrencyTracker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +19,7 @@ import android.widget.TextView;
 
 public class login extends AppCompatActivity {
 
+    private static final int REQUEST_CODE_CAMERA = 1;
     Button BtnLogin;
     EditText EdNama;
     Spinner SpinnerFaksi;
@@ -51,8 +56,21 @@ public class login extends AppCompatActivity {
         });
 
         CheckUser();
+        CheckCameraPermission();
 
     }
+
+    private void CheckCameraPermission() {
+        if(ContextCompat.checkSelfPermission(
+                getApplicationContext(),Manifest.permission.CAMERA)
+        != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CAMERA},REQUEST_CODE_CAMERA);
+        }
+
+
+    }
+
 
     private void CheckUser() {
         //Check user data in shared pref manager, if the data is exists then proceed to Main Activity

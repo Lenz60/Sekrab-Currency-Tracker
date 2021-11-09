@@ -7,6 +7,57 @@
     android:background="@color/white">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Nama"
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From"
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Faksi"
+                android:textSize="25sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -23,9 +74,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="CURRENCY"
+            android:text="999"
             android:textColor="@color/black"
-            android:textSize="45sp"/>
+            android:textSize="40sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="GDM"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,12 +101,14 @@
             android:gravity="center">
 
             <Button
+                android:id="@+id/BtnReduce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FC5404"
                 android:text="Reduce"
                 android:textColor="@color/white"/>
             <Button
+                android:id="@+id/BtnBounty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="20dp"
@@ -57,6 +117,7 @@
                 android:text="Special \nBounty"
                 android:textColor="@color/white"/>
             <Button
+                android:id="@+id/BtnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#20655F"
@@ -74,6 +135,7 @@
         android:layout_marginTop="30dp">
         <!-- Add History of Adding and reducing Point Here -->
         <ListView
+            android:id="@+id/ListHistory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </ListView>
